@@ -1,0 +1,39 @@
+.banner {
+    background-color: #95e1d3;
+
+    @media(max-width: 768px) {
+        display: none;
+    }
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__item {
+        padding: 85px 0;
+        max-width: 222px;
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        border-right: 1px solid #b5eae0;
+
+        &:last-child {
+            border-right: none;
+        }
+
+        &-title {
+            font-size: 72px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        &-text {
+            color: #fff;
+            text-transform: uppercase;
+        }
+    }
+}

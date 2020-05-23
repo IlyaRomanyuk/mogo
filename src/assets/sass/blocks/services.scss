@@ -1,0 +1,50 @@
+.services {
+
+    margin-top: 40px; 
+
+    @media(max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    &__inner {
+        border-bottom: 1px solid #e5e5e5;      
+        
+        &:last-child {
+            border: none;
+        }
+    }
+
+    &__item {
+        margin: 50px 0;
+       
+        display: flex;
+        height: auto;
+
+        text-align: left;
+
+        @media(max-width: 768px) {
+            margin: 25px;
+        }
+
+        &-icon {
+            display: block;
+        }
+    }
+}
+
+.info {
+    padding: 0 0 0 25px;
+
+    &__title {
+        color: #333;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    &__text {
+        color: #999;
+        margin-top: 17px;
+    }
+}

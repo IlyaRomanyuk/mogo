@@ -1,0 +1,140 @@
+.team {
+    margin-top: 40px;
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+
+        @media(max-width: 1200px) {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    &__item {
+        max-width: 360px;
+        width: 100%;
+        height: auto;
+
+        background-color: #95e1d3;
+
+        position: relative;
+        transition: all 0.3s ease-in;
+
+        @media(max-width: 1200px) {
+            margin-bottom: 70px;
+
+            .team__item:last-child {
+                margin-bottom: none;
+            }
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+
+            background: linear-gradient(0deg, #fce38a, #f38181);
+            opacity: 0;
+
+            transition: all 0.3s ease-in;
+        }
+
+        &:hover .team__photo {
+            transform: translate3d(-10px, -10px, 0);
+            transition: all 0.3s ease-in;
+        }
+
+        &:hover .team__social {
+            opacity: 1;
+            transition: opacity 0.3s ease-in;
+        }
+
+        &:hover {
+            cursor: pointer;
+
+            &:after {
+                opacity: .9;
+                transform: translate3d(-10px, -10px, 0);
+                transition: all 0.3s ease-in;
+            }
+        }
+    }
+
+    &__photo {
+        display: block;
+        width: 100%;
+        height: auto;
+
+        transform: translate3d(0, 0, 0);
+        transition: all 0.3s ease-in;
+    }
+
+    &__social {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 2;
+        transform: translate3d(-50%, -50%, 0);
+
+        display: flex;
+        opacity: 0;
+        transition: opacity 0.3s ease-in;
+
+        &-block {
+            padding: 15px 18px;
+            background-color: #fce38a;
+            border-right: 1px solid #f9bd87;
+
+            transition: all 0.3s ease-in;
+
+            &:hover {
+                background-color: #f38181;
+                transition: all 0.3s ease-in;
+                .team__social-icon {
+                    fill: #fff;
+                    transition: all 0.3s ease-in;
+                }
+            }
+
+            &:last-child {
+                border: none;
+            }
+
+        }
+
+        &-icon {
+            display: block;
+            width: 25px;
+            height: 25px;
+            
+            fill: #f38181;
+            transition: all 0.3s ease-in;
+        }
+    }
+
+    &__info {
+        position: absolute;
+        bottom: -50px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        &-name {
+            text-transform: uppercase;
+            color: #333;
+            font-weight: 600;
+        }
+
+        &-job {
+            font-style: italic;
+            font-weight: 300;
+            color: #999;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+.header {
+    width: 100%;
+    padding: 2rem 0;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+
+    background-color: transparent;
+
+    &__row {
+        align-items: center;
+    }
+}
+
+.header--scroll {
+    background-color: #e89483;
+    opacity: .9;
+    //padding: 10px 0;
+    transition: all 0.9s ease-in-out;   
+}

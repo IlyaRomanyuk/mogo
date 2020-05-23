@@ -1,0 +1,47 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+
+    &__link {
+        font-size: 1rem;
+        color: #fff;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: 400;
+
+        position: relative;
+
+        &:after {
+            display: none;
+            height: 3px;
+            width: 100%;
+
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -12px;
+
+            background-color: #fce38a;
+
+            transition: all 0.3s linear;
+        }
+
+        &:hover {
+            &:after {
+                display: block;
+                transition: all 0.3s linear;
+            }
+        }
+    }
+
+    &__icon {
+        width: 18px;
+        height: 18px;
+
+        fill: #fff;
+    }
+
+    @media(max-width: 992px) {
+        display: none;
+    }
+}

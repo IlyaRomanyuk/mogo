@@ -1,0 +1,79 @@
+.burger {
+    display: none;
+    justify-content: flex-end;
+
+    &__menu {
+        position: relative;
+
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    &__btn {
+        position: relative;
+        width: 26px;
+        height: 3px;
+        background-color: #fff;
+        border-radius: 10px; 
+        transition: all 0.3s ease-in-out;
+        &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+
+            width: 26px;
+            height: 3px;
+            background-color: #fff;
+            border-radius: 10px; 
+            transition: all 0.3s ease-in-out;
+
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: -8px;
+
+            width: 26px;
+            height: 3px;
+            background-color: #fff;
+            border-radius: 10px; 
+            transition: all 0.3s ease-in-out;
+
+        }
+
+    }
+
+    &__popup {
+        display: block;
+
+        position: absolute;
+        top: 30px;
+        background-color: #ecbc88;
+        padding: 15px;
+        border-radius: 10px;
+
+        transform: translateY(-290px);
+        transition: all 0.3s cubic-bezier(1,.1,0,.78);
+    }
+
+    &__item {
+        list-style: none;
+        color: #fff;
+    }
+
+    @media(max-width: 992px) {
+        display: flex;
+    }
+}
+
+.active {
+    transform: translateY(0);
+    transition: all 0.3s cubic-bezier(1,.1,0,.78);
+}

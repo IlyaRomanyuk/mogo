@@ -1,0 +1,87 @@
+@mixin panorama($color, $colStart, $colEnd, $rowStart, $rowEnd) {
+    background-color: $color;
+
+    grid-column-start: $colStart;
+    grid-column-end: $colEnd;
+    grid-row-start: $rowStart;
+    grid-row-end: $rowEnd;
+}
+
+.panorama {
+    margin-top: 100px;
+
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(2, 20vw);
+    grid-gap: 0;
+
+    @media(max-width: 768px) {
+        margin-top: 50px;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    img {
+        display: block;
+        width: 100%;
+
+        height: 100%;
+    }
+    
+    &__item {
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            background: linear-gradient(0deg, #fce38a, #f38181);
+            opacity: 0;
+
+            transition: all 0.3s ease-in;
+        }
+
+        &:hover {
+
+            &:after {
+                opacity: .9;
+                transition: all 0.3s ease-in; 
+            }
+    
+        }
+    }
+
+    &__item-1 {
+        @include panorama(#95e1d3, 1, 3, 1, 2);
+    }
+
+    &__item-2 {
+        @include panorama(#95e1d3, 3, 5, 1, 2);
+    }
+
+    &__item-3 {
+        @include panorama(#95e1d3, 5, 7, 1, 3);
+    }
+
+    &__item-4 {
+        @include panorama(#95e1d3, 7, 9, 1, 2);
+    }
+
+    &__item-5 {
+        @include panorama(#95e1d3, 1, 3, 2, 3);
+    }
+
+    &__item-6 {
+        @include panorama(#95e1d3, 3, 5, 2, 3);
+    }
+
+    &__item-7 {
+        @include panorama(#95e1d3, 7, 9, 2, 3);
+    }
+}

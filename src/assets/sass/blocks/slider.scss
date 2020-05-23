@@ -1,0 +1,8 @@
+.slider {
+    background-color: #f8f8f8;
+    padding: 60px 0;
+
+    @media(max-width: 1200px) {
+        display: none;
+    }
+}
